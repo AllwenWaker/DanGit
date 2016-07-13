@@ -12,8 +12,8 @@ bot = telebot.TeleBot('YOUR TOKEN') # makan token shoma
 @bot.message_handler(commands=['start', 'help'])
 def m(m):
     markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton('Inline Mode', switch_inline_query='taylor-team'))
-    bot.send_message(m.chat.id, 'Hi Welcome Github bot\ncommands : \n/git [username]\n\ncreated By Taylor Team \ndeveloper : @negative_officiall', reply_markup=markup)
+    markup.add(types.InlineKeyboardButton('| Switch Inline Mode |', switch_inline_query='taylor-team'))
+    bot.send_message(m.chat.id, 'Hi Welcome Github bot\nCommands ~\n/git [UserName]\nDeveloper : @Allwen', reply_markup=markup)
     print 'bot send help command'
 
 @bot.message_handler(regexp='^(/git) (.*)')
@@ -38,7 +38,7 @@ def gif(m):
         bot.send_message(m.chat.id, 'Name : <b>{}</b>\nType : <b>{}</b>\nCompany : <b>{}</b>\nblog : <code>{}</code>\nlocation : <b>{}</b>\nbio : <i>{}</i>\n\nUrl : <code>{}</code>\nfollowers : <code>{}</code>\nfollowing : <code>{}</code>\nRepos : <code>{}</code>\n\xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \n@taylor_team'.format(name,typee,company,blog,location,bio,url_html,followers,following,public_repos), parse_mode='HTML')
         print 'bot send git command'
     if 'message' in json_data:
-        bot.send_message(m.chat.id, 'Error \n/git [username]')
+        bot.send_message(m.chat.id, '#Error \n/git [UserName]')
         return
 
 @bot.inline_handler(lambda query: len(query.query.split()) == 1)
@@ -64,10 +64,4 @@ def qq(q):
         bot.answer_inline_query(q.id, [gitss, avatarr], cache_time=1)
 
 bot.polling(True)
-# _____           _              _____
-#|_   _|_ _ _   _| | ___  _ __  |_   _|__  __ _ _ __ ___
-#  | |/ _` | | | | |/ _ \| '__|   | |/ _ \/ _` | '_ ` _ \
-#  | | (_| | |_| | | (_) | |      | |  __/ (_| | | | | | |
-#  |_|\__,_|\__, |_|\___/|_|      |_|\___|\__,_|_| |_| |_|
-#           |___/
-#Copy right  2016 Negative - Taylor Team
+
